@@ -1,0 +1,4 @@
+Model,Configurations searched,Fits (configs x folds),Best params,Best CV F1,Search seconds
+Logistic Regression,5,25,C=1.0,0.964,0.63
+SVM (RBF),12,60,"C=10.0, gamma=scale",0.9674,2.4
+Random Forest,8,40,"max_depth=None, min_samples_leaf=1, n_estimators=200",0.9489,35.83

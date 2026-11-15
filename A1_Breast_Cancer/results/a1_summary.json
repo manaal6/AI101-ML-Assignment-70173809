@@ -1,0 +1,259 @@
+{
+  "task": "A1",
+  "seed": 42,
+  "dataset": {
+    "samples": 569,
+    "features": 30,
+    "malignant": 212,
+    "benign": 357,
+    "malignant_pct": 37.26,
+    "missing_values": 0,
+    "duplicate_rows": 0,
+    "train_size": 455,
+    "test_size": 114,
+    "train_malignant": 170,
+    "test_malignant": 42
+  },
+  "cv": {
+    "Logistic Regression": {
+      "CV accuracy": 0.9736,
+      "CV accuracy std": 0.0149,
+      "CV precision": 0.9771,
+      "CV precision std": 0.028,
+      "CV recall": 0.9529,
+      "CV recall std": 0.0399,
+      "CV f1": 0.964,
+      "CV f1 std": 0.0207,
+      "CV roc_auc": 0.9958,
+      "CV roc_auc std": 0.0047
+    },
+    "SVM (RBF)": {
+      "CV accuracy": 0.9758,
+      "CV accuracy std": 0.0082,
+      "CV precision": 0.9711,
+      "CV precision std": 0.0181,
+      "CV recall": 0.9647,
+      "CV recall std": 0.0288,
+      "CV f1": 0.9674,
+      "CV f1 std": 0.0114,
+      "CV roc_auc": 0.9935,
+      "CV roc_auc std": 0.0059
+    },
+    "Random Forest": {
+      "CV accuracy": 0.9626,
+      "CV accuracy std": 0.0149,
+      "CV precision": 0.9638,
+      "CV precision std": 0.0114,
+      "CV recall": 0.9353,
+      "CV recall std": 0.039,
+      "CV f1": 0.9489,
+      "CV f1 std": 0.021,
+      "CV roc_auc": 0.9889,
+      "CV roc_auc std": 0.007
+    }
+  },
+  "best_params": {
+    "Logistic Regression": {
+      "clf__C": 1.0
+    },
+    "SVM (RBF)": {
+      "clf__C": 10.0,
+      "clf__gamma": "scale"
+    },
+    "Random Forest": {
+      "clf__max_depth": null,
+      "clf__min_samples_leaf": 1,
+      "clf__n_estimators": 200
+    }
+  },
+  "search_seconds": {
+    "Logistic Regression": 0.6329415000000154,
+    "SVM (RBF)": 2.399236899999778,
+    "Random Forest": 35.82901380000021
+  },
+  "test": {
+    "Logistic Regression": {
+      "accuracy": 0.9649122807017544,
+      "precision": 0.975,
+      "recall": 0.9285714285714286,
+      "f1": 0.9512195121951219,
+      "roc_auc": 0.996031746031746,
+      "tn": 71.0,
+      "fp": 1.0,
+      "fn": 3.0,
+      "tp": 39.0
+    },
+    "SVM (RBF)": {
+      "accuracy": 0.9736842105263158,
+      "precision": 1.0,
+      "recall": 0.9285714285714286,
+      "f1": 0.9629629629629629,
+      "roc_auc": 0.9927248677248677,
+      "tn": 72.0,
+      "fp": 0.0,
+      "fn": 3.0,
+      "tp": 39.0
+    },
+    "Random Forest": {
+      "accuracy": 0.9649122807017544,
+      "precision": 1.0,
+      "recall": 0.9047619047619048,
+      "f1": 0.95,
+      "roc_auc": 0.994212962962963,
+      "tn": 72.0,
+      "fp": 0.0,
+      "fn": 4.0,
+      "tp": 38.0
+    }
+  },
+  "best_model": "SVM (RBF)",
+  "threshold_study": {
+    "target_recall_oof": 0.97,
+    "boundary_threshold_oof": 0.68,
+    "chosen_threshold": 0.38,
+    "at_0_50": {
+      "Operating point": "default 0.50",
+      "Threshold": 0.5,
+      "Precision": 1.0,
+      "Recall": 0.9285714285714286,
+      "F1": 0.9629629629629629,
+      "FN (missed malignancies)": 3,
+      "FP (false alarms)": 0,
+      "TP": 39,
+      "TN": 72
+    },
+    "at_chosen": {
+      "Operating point": "chosen 0.38",
+      "Threshold": 0.38,
+      "Precision": 0.975609756097561,
+      "Recall": 0.9523809523809523,
+      "F1": 0.963855421686747,
+      "FN (missed malignancies)": 2,
+      "FP (false alarms)": 1,
+      "TP": 40,
+      "TN": 71
+    },
+    "precision_delta_vs_0_50": -0.024390243902439046,
+    "precision_cost_abs": 0.024390243902439046
+  },
+  "correlation": {
+    "n_pairs_ge_095": 15,
+    "n_groups": 2,
+    "groups": [
+      [
+        "mean radius",
+        "mean perimeter",
+        "mean area",
+        "worst radius",
+        "worst perimeter",
+        "worst area"
+      ],
+      [
+        "radius error",
+        "perimeter error",
+        "area error"
+      ]
+    ],
+    "dropped_features": [
+      "area error",
+      "mean area",
+      "mean perimeter",
+      "mean radius",
+      "perimeter error",
+      "worst area",
+      "worst radius"
+    ],
+    "kept_features": [
+      "mean texture",
+      "mean smoothness",
+      "mean compactness",
+      "mean concavity",
+      "mean concave points",
+      "mean symmetry",
+      "mean fractal dimension",
+      "radius error",
+      "texture error",
+      "smoothness error",
+      "compactness error",
+      "concavity error",
+      "concave points error",
+      "symmetry error",
+      "fractal dimension error",
+      "worst texture",
+      "worst perimeter",
+      "worst smoothness",
+      "worst compactness",
+      "worst concavity",
+      "worst concave points",
+      "worst symmetry",
+      "worst fractal dimension"
+    ]
+  },
+  "ablation": {
+    "Logistic Regression": {
+      "Model": "Logistic Regression",
+      "Features": 30,
+      "CV F1 (all)": 0.964,
+      "CV F1 (reduced)": 0.9603,
+      "Test F1 (all)": 0.9512,
+      "Test F1 (reduced)": 0.9512,
+      "Test ROC-AUC (all)": 0.996,
+      "Test ROC-AUC (reduced)": 0.995,
+      "Delta test F1": 0.0,
+      "Delta test ROC-AUC": -0.001
+    },
+    "SVM (RBF)": {
+      "Model": "SVM (RBF)",
+      "Features": 30,
+      "CV F1 (all)": 0.9674,
+      "CV F1 (reduced)": 0.9555,
+      "Test F1 (all)": 0.963,
+      "Test F1 (reduced)": 0.963,
+      "Test ROC-AUC (all)": 0.9927,
+      "Test ROC-AUC (reduced)": 0.9934,
+      "Delta test F1": 0.0,
+      "Delta test ROC-AUC": 0.0007
+    },
+    "Random Forest": {
+      "Model": "Random Forest",
+      "Features": 30,
+      "CV F1 (all)": 0.9489,
+      "CV F1 (reduced)": 0.9416,
+      "Test F1 (all)": 0.95,
+      "Test F1 (reduced)": 0.9367,
+      "Test ROC-AUC (all)": 0.9942,
+      "Test ROC-AUC (reduced)": 0.9954,
+      "Delta test F1": -0.0133,
+      "Delta test ROC-AUC": 0.0012
+    }
+  },
+  "feature_importance": {
+    "top_rf": {
+      "worst perimeter": 0.14791,
+      "worst area": 0.13227,
+      "worst concave points": 0.11011,
+      "mean concave points": 0.0882,
+      "worst radius": 0.08512,
+      "mean radius": 0.06055,
+      "mean perimeter": 0.06046,
+      "mean area": 0.0447,
+      "mean concavity": 0.04409,
+      "worst concavity": 0.03283
+    },
+    "top_positive_logreg": {
+      "worst texture": 1.43409,
+      "radius error": 1.23333,
+      "worst symmetry": 1.06126,
+      "mean concave points": 0.95281,
+      "worst concavity": 0.91141
+    },
+    "top_negative_logreg": {
+      "compactness error": -0.90692,
+      "fractal dimension error": -0.59388,
+      "mean compactness": -0.43955,
+      "texture error": -0.40761,
+      "symmetry error": -0.33066
+    }
+  },
+  "always_benign_test_accuracy": 0.631578947368421
+}
