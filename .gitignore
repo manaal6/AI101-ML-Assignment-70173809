@@ -1,0 +1,32 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Datasets (download instructions in each task's data/README.md)
+data/*.csv
+data/*.zip
+data/*.json
+data/Images/
+data/Flickr8k*
+data/glove*
+data/*.jpg
+data/*.jpeg
+
+# Model artefacts larger than 50 MB / pickled objects
+*.pt
+*.pth
+*.h5
+*.pkl
+*.joblib
+*.npy
+*.npz
+
+# Credentials
+kaggle.json
+
+# OS / editor
+Thumbs.db
+.DS_Store
