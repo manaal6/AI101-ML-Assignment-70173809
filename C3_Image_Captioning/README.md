@@ -31,9 +31,9 @@ Locally, `data/` works instead of `/kaggle/input/flickr8k` (see
 
 - Split by image, seed 42: 6,000 train / 1,000 validation / 1,091 test images,
   all five captions per image kept together.
-- Captions lower-cased, punctuation removed, `<start>`/`<end>` added, truncated
-  to the 99th percentile (capped at 30). Vocabulary from training captions only,
-  minimum frequency 5.
+- Captions lower-cased, punctuation removed, `<start>`/`<end>` added, padded or
+  truncated to 22 tokens. Vocabulary from training captions only, minimum
+  frequency 5.
 - Frozen ResNet-50 (2048-d) and EfficientNet-B0 (1280-d) features, cached.
 - Merge decoder: image → dense (512), caption prefix → embedding (256), both
   concatenated at every step of a 512-unit LSTM, softmax over the vocabulary.
@@ -42,6 +42,21 @@ Locally, `data/` works instead of `/kaggle/input/flickr8k` (see
 - Decoding: greedy, beam k=3 and beam k=5; corpus BLEU-1…4 against all five
   references.
 
+## Results (executed on Kaggle T4)
+
+8,091 images and 40,455 captions; vocabulary 7,439 → 2,557 (min frequency 5);
+test OOV 3.24%. Best validation loss 2.6863 (ResNet-50, 16 epochs) and 2.7151
+(EfficientNet-B0, 12 epochs). Test set: 1,091 images, 5,455 references.
+
+| Encoder | Decoding | BLEU-1 | BLEU-4 | Distinct words | Mean length | Decode (s) |
+|---|---|---|---|---|---|---|
+| ResNet-50 | greedy | 59.60 | 19.51 | 445 | 10.62 | 1.1 |
+| ResNet-50 | beam k=3 | 62.46 | 21.27 | 408 | 9.71 | 4.0 |
+| ResNet-50 | beam k=5 | **62.86** | **21.64** | 405 | 9.16 | 5.9 |
+| EfficientNet-B0 | greedy | 58.68 | 18.05 | 364 | 10.51 | 0.8 |
+| EfficientNet-B0 | beam k=3 | 62.78 | 21.50 | 351 | 9.76 | 3.9 |
+| EfficientNet-B0 | beam k=5 | 63.19 | 21.47 | 345 | 9.22 | 5.9 |
+
 ## Artifacts produced on Kaggle
 
 - `figures/fig1_captions_and_vocab.png` — length distribution and top words.
@@ -49,5 +64,6 @@ Locally, `data/` works instead of `/kaggle/input/flickr8k` (see
 - `figures/fig3_bleu_comparison.png` — BLEU-1…4 by backbone and decoding.
 - `figures/fig4_distinct_words.png` — lexical diversity.
 - `figures/fig5_examples.png` — three good and three poor test examples.
+- `figures/fig5_examples_report.png` — report version of the examples figure.
 - `results/c3_dataset_stats.csv`, `c3_bleu_results.csv`, `c3_examples.csv`,
   `c3_summary.json`.

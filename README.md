@@ -30,7 +30,7 @@ AI101-ML-Assignment-70173809/
 |   |-- results/                   metric tables saved by the notebook
 |   |-- report/
 |   |   |-- 70173809_A1_Report.pdf
-|   |   `-- source/                LaTeX source of the report
+|   |   `-- 70173809_A1_Report.tex  LaTeX source
 |   `-- data/README.md             data source notes (sklearn built-in)
 |-- B1_Fake_Job_Postings/          same layout
 `-- C3_Image_Captioning/           same layout
