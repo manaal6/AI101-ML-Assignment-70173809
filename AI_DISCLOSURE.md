@@ -29,10 +29,11 @@ The tool was used for the following permitted purposes:
 
 | Task | Assisted parts |
 |---|---|
-| A1 | Notebook scaffolding; EDA plotting code; threshold-sweep helper; first draft of report sections 1–7 |
-| B1 | Notebook scaffolding; `ColumnTransformer` template; ablation table code; first draft of report sections 1–7 |
-| C3 | Notebook scaffolding; feature-caching code; beam-search helper; first draft of report sections 1–7 |
-| All | This disclosure file |
+| A1 | Notebook scaffolding; EDA plotting code; threshold-sweep helper |
+| B1 | Notebook scaffolding; `ColumnTransformer` template; ablation table code |
+| C3 | Notebook scaffolding; feature-caching code; beam-search helper |
+
+Results tables, figures and the analysis/interpretation sections were written by the student from the notebook outputs.
 
 ## How the content was verified
 
