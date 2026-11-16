@@ -1,0 +1,140 @@
+{
+  "task": "C3",
+  "seed": 42,
+  "platform": "Kaggle Notebook, T4 GPU",
+  "gpu": "Tesla T4",
+  "dataset": {
+    "images": 8091,
+    "captions": 40455,
+    "train_images": 6000,
+    "val_images": 1000,
+    "test_images": 1091,
+    "vocab_before": 7439,
+    "vocab_after": 2557,
+    "min_freq": 5,
+    "max_len": 22,
+    "mean_caption_length": 10.8308,
+    "median_caption_length": 10.0,
+    "test_oov_pct": 3.24
+  },
+  "features": {
+    "extraction_seconds": {
+      "resnet50": 118.9,
+      "efficientnet_b0": 59.5
+    }
+  },
+  "training": {
+    "resnet50": {
+      "epochs_run": 16,
+      "best_val_loss": 2.6863,
+      "seconds": 95.1,
+      "params": 5640957
+    },
+    "efficientnet_b0": {
+      "epochs_run": 12,
+      "best_val_loss": 2.7151,
+      "seconds": 70.1,
+      "params": 5247741
+    }
+  },
+  "bleu": [
+    {
+      "Backbone": "resnet50",
+      "Decoding": "greedy",
+      "BLEU-1": 59.6,
+      "BLEU-2": 41.97,
+      "BLEU-3": 28.97,
+      "BLEU-4": 19.51,
+      "Distinct words": 445,
+      "Mean length": 10.62,
+      "Decode seconds": 1.1
+    },
+    {
+      "Backbone": "resnet50",
+      "Decoding": "beam k=3",
+      "BLEU-1": 62.46,
+      "BLEU-2": 44.59,
+      "BLEU-3": 31.26,
+      "BLEU-4": 21.27,
+      "Distinct words": 408,
+      "Mean length": 9.71,
+      "Decode seconds": 4.0
+    },
+    {
+      "Backbone": "resnet50",
+      "Decoding": "beam k=5",
+      "BLEU-1": 62.86,
+      "BLEU-2": 45.0,
+      "BLEU-3": 31.72,
+      "BLEU-4": 21.64,
+      "Distinct words": 405,
+      "Mean length": 9.16,
+      "Decode seconds": 5.9
+    },
+    {
+      "Backbone": "efficientnet_b0",
+      "Decoding": "greedy",
+      "BLEU-1": 58.68,
+      "BLEU-2": 40.86,
+      "BLEU-3": 27.44,
+      "BLEU-4": 18.05,
+      "Distinct words": 364,
+      "Mean length": 10.51,
+      "Decode seconds": 0.8
+    },
+    {
+      "Backbone": "efficientnet_b0",
+      "Decoding": "beam k=3",
+      "BLEU-1": 62.78,
+      "BLEU-2": 44.84,
+      "BLEU-3": 31.29,
+      "BLEU-4": 21.5,
+      "Distinct words": 351,
+      "Mean length": 9.76,
+      "Decode seconds": 3.9
+    },
+    {
+      "Backbone": "efficientnet_b0",
+      "Decoding": "beam k=5",
+      "BLEU-1": 63.19,
+      "BLEU-2": 45.07,
+      "BLEU-3": 31.51,
+      "BLEU-4": 21.47,
+      "Distinct words": 345,
+      "Mean length": 9.22,
+      "Decode seconds": 5.9
+    }
+  ],
+  "configs": [
+    {
+      "backbone": "resnet50",
+      "decoding": "greedy",
+      "k": null
+    },
+    {
+      "backbone": "resnet50",
+      "decoding": "beam",
+      "k": 3
+    },
+    {
+      "backbone": "resnet50",
+      "decoding": "beam",
+      "k": 5
+    },
+    {
+      "backbone": "efficientnet_b0",
+      "decoding": "greedy",
+      "k": null
+    },
+    {
+      "backbone": "efficientnet_b0",
+      "decoding": "beam",
+      "k": 3
+    },
+    {
+      "backbone": "efficientnet_b0",
+      "decoding": "beam",
+      "k": 5
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+statistic,value
+images,8091
+captions,40455
+train / val / test images,6000 / 1000 / 1091
+vocab before min-freq,7439
+vocab after min-freq,2557
+min frequency,5
+max caption length,22
+mean caption length,10.83
+median caption length,10.0
+test OOV rate %,3.24
