@@ -191,7 +191,7 @@ the boundary rather than adding many new true positives.
 
 \begin{table}[t]
 \centering
-\caption{Ablation with LightGBM on the test set.}
+\caption{Ablation with LightGBM on the test set. Best per column in bold.}
 \label{tab:ablation}
 \footnotesize
 \setlength{\tabcolsep}{3pt}
@@ -200,7 +200,7 @@ the boundary rather than adding many new true positives.
 Features & PR-AUC & Precision & Recall & F1 \\
 \midrule
 Structured only & 0.795 & 0.794 & 0.623 & 0.698 \\
-Text only & 0.890 & 0.888 & 0.792 & \textbf{0.837} \\
+Text only & 0.890 & 0.888 & \textbf{0.792} & \textbf{0.837} \\
 Combined & \textbf{0.919} & \textbf{0.894} & 0.777 & 0.831 \\
 \bottomrule
 \end{tabular}

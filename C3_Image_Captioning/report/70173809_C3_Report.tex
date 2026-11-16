@@ -154,7 +154,7 @@ Encoder input & 256 resize, 224 centre crop \\
 
 \begin{table}[t]
 \centering
-\caption{Test-set captioning results (1,091 images, 5,455 references).}
+\caption{Test-set captioning results (1,091 images, 5,455 references). Best BLEU in bold.}
 \label{tab:bleu}
 \footnotesize
 \setlength{\tabcolsep}{2.6pt}
@@ -164,10 +164,10 @@ Encoder & Decoding & B-1 & B-4 & Distinct & Length & Sec. \\
 \midrule
 ResNet-50 & greedy & 59.60 & 19.51 & 445 & 10.62 & 1.1 \\
 ResNet-50 & beam $k{=}3$ & 62.46 & 21.27 & 408 & 9.71 & 4.0 \\
-ResNet-50 & beam $k{=}5$ & \textbf{62.86} & \textbf{21.64} & 405 & 9.16 & 5.9 \\
+ResNet-50 & beam $k{=}5$ & 62.86 & \textbf{21.64} & 405 & 9.16 & 5.9 \\
 EfficientNet-B0 & greedy & 58.68 & 18.05 & 364 & 10.51 & 0.8 \\
 EfficientNet-B0 & beam $k{=}3$ & 62.78 & 21.50 & 351 & 9.76 & 3.9 \\
-EfficientNet-B0 & beam $k{=}5$ & 63.19 & 21.47 & 345 & 9.22 & 5.9 \\
+EfficientNet-B0 & beam $k{=}5$ & \textbf{63.19} & 21.47 & 345 & 9.22 & 5.9 \\
 \bottomrule
 \end{tabular}
 \end{table}
