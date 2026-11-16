@@ -1,0 +1,4 @@
+,postings,fraud,fraud %
+train (70%),12516,606,4.84
+validation (15%),2682,130,4.85
+test (15%),2682,130,4.85

@@ -1,0 +1,272 @@
+{
+  "task": "B1",
+  "seed": 42,
+  "dataset": {
+    "rows": 17880,
+    "columns": 18,
+    "fraud": 866,
+    "real": 17014,
+    "fraud_pct": 4.8434004474272925,
+    "duplicates": 0,
+    "missing_pct": {
+      "salary_range": 83.96,
+      "department": 64.58,
+      "required_education": 45.33,
+      "benefits": 40.34,
+      "required_experience": 39.43,
+      "function": 36.1,
+      "industry": 27.42,
+      "employment_type": 19.41,
+      "company_profile": 18.5,
+      "requirements": 15.08,
+      "location": 1.94,
+      "description": 0.01,
+      "job_id": 0.0,
+      "telecommuting": 0.0,
+      "has_questions": 0.0,
+      "has_company_logo": 0.0,
+      "title": 0.0,
+      "fraudulent": 0.0
+    },
+    "description_chars_mean": 1218.004418344519,
+    "description_chars_median": 1017.0,
+    "description_words_mean": 170.4459731543624,
+    "description_words_median": 146.0,
+    "design_matrix_features": 20102,
+    "split": {
+      "train": 12516,
+      "val": 2682,
+      "test": 2682,
+      "train_fraud": 606,
+      "val_fraud": 130,
+      "test_fraud": 130
+    },
+    "scale_pos_weight": 19.653465346534652
+  },
+  "cv": {
+    "Logistic Regression": {
+      "Configurations": 2,
+      "Selection scheme": "3-fold CV",
+      "Best params": "C=1.0",
+      "PR-AUC mean": 0.8251,
+      "PR-AUC std": 0.0301,
+      "Search seconds": 55.8
+    },
+    "Linear SVM": {
+      "Configurations": 2,
+      "Selection scheme": "3-fold CV",
+      "Best params": "C=0.1",
+      "PR-AUC mean": 0.8492,
+      "PR-AUC std": 0.0328,
+      "Search seconds": 31.4
+    },
+    "LightGBM": {
+      "Configurations": 1,
+      "Selection scheme": "fixed (validation)",
+      "Best params": "fixed",
+      "PR-AUC mean": 0.9542,
+      "PR-AUC std": null,
+      "Search seconds": 67.1
+    }
+  },
+  "best_params": {
+    "Logistic Regression": {
+      "C": 1.0
+    },
+    "Linear SVM": {
+      "C": 0.1
+    },
+    "LightGBM": {}
+  },
+  "search_seconds": {
+    "Logistic Regression": 55.80544809999992,
+    "Linear SVM": 31.44996919999994,
+    "LightGBM": 67.13147019999997
+  },
+  "validation": {
+    "Logistic Regression": {
+      "threshold": 0.7528767867011111,
+      "precision": 0.8582677165354331,
+      "recall": 0.8384615384615385,
+      "f1": 0.8482490272373541,
+      "pr_auc": 0.919861235384605,
+      "roc_auc": 0.9935616108029901,
+      "accuracy": 0.9854586129753915,
+      "tn": 2534,
+      "fp": 18,
+      "fn": 21,
+      "tp": 109
+    },
+    "Linear SVM": {
+      "threshold": 0.4173189068354618,
+      "precision": 0.9224137931034483,
+      "recall": 0.823076923076923,
+      "f1": 0.8699186991869918,
+      "pr_auc": 0.941076052896182,
+      "roc_auc": 0.9954666023631541,
+      "accuracy": 0.9880686055182699,
+      "tn": 2543,
+      "fp": 9,
+      "fn": 23,
+      "tp": 107
+    },
+    "LightGBM": {
+      "threshold": 0.5286076633316558,
+      "precision": 0.9732142857142857,
+      "recall": 0.8384615384615385,
+      "f1": 0.9008264462809917,
+      "pr_auc": 0.9541659491228103,
+      "roc_auc": 0.9940559440559441,
+      "accuracy": 0.9910514541387024,
+      "tn": 2549,
+      "fp": 3,
+      "fn": 21,
+      "tp": 109
+    }
+  },
+  "test": {
+    "Logistic Regression": {
+      "threshold": 0.7528767867011111,
+      "precision": 0.8106060606060606,
+      "recall": 0.823076923076923,
+      "f1": 0.816793893129771,
+      "pr_auc": 0.902671937786871,
+      "roc_auc": 0.9908488063660478,
+      "accuracy": 0.9821029082774049,
+      "tn": 2527,
+      "fp": 25,
+      "fn": 23,
+      "tp": 107
+    },
+    "Linear SVM": {
+      "threshold": 0.4173189068354618,
+      "precision": 0.8947368421052632,
+      "recall": 0.7846153846153846,
+      "f1": 0.8360655737704918,
+      "pr_auc": 0.9178083308574958,
+      "roc_auc": 0.9911833855799372,
+      "accuracy": 0.9850857568978374,
+      "tn": 2540,
+      "fp": 12,
+      "fn": 28,
+      "tp": 102
+    },
+    "LightGBM": {
+      "threshold": 0.5286076633316558,
+      "precision": 0.8938053097345132,
+      "recall": 0.7769230769230769,
+      "f1": 0.831275720164609,
+      "pr_auc": 0.9191387598217273,
+      "roc_auc": 0.9921358813600193,
+      "accuracy": 0.9847129008202834,
+      "tn": 2540,
+      "fp": 12,
+      "fn": 29,
+      "tp": 101
+    }
+  },
+  "best_model": "LightGBM",
+  "always_real_accuracy": 0.9515287099179717,
+  "class_weight_check": [
+    {
+      "Setting": "class_weight=None",
+      "Threshold": 0.3207,
+      "Val PR-AUC": 0.8786,
+      "Val F1 (fraud)": 0.8085,
+      "Val recall": 0.7308,
+      "Val precision": 0.9048
+    },
+    {
+      "Setting": "class_weight='balanced'",
+      "Threshold": 0.7529,
+      "Val PR-AUC": 0.9199,
+      "Val F1 (fraud)": 0.8482,
+      "Val recall": 0.8385,
+      "Val precision": 0.8583
+    }
+  ],
+  "ablation": [
+    {
+      "Features": "structured-only",
+      "Threshold": 0.8575,
+      "Val PR-AUC": 0.8424,
+      "Test PR-AUC": 0.7947,
+      "Test ROC-AUC": 0.9698,
+      "Test precision": 0.7941,
+      "Test recall": 0.6231,
+      "Test F1": 0.6983
+    },
+    {
+      "Features": "text-only",
+      "Threshold": 0.455,
+      "Val PR-AUC": 0.9363,
+      "Test PR-AUC": 0.8898,
+      "Test ROC-AUC": 0.9839,
+      "Test precision": 0.8879,
+      "Test recall": 0.7923,
+      "Test F1": 0.8374
+    },
+    {
+      "Features": "combined",
+      "Threshold": 0.5286,
+      "Val PR-AUC": 0.9542,
+      "Test PR-AUC": 0.9191,
+      "Test ROC-AUC": 0.9921,
+      "Test precision": 0.8938,
+      "Test recall": 0.7769,
+      "Test F1": 0.8313
+    }
+  ],
+  "top_terms": {
+    "fraud": {
+      "aptitude staffing": 2.61107,
+      "accion": 2.59071,
+      "earn": 2.35874,
+      "hotel": 2.20163,
+      "aptitude": 2.14527,
+      "money": 2.1366,
+      "link": 2.10462,
+      "data entry": 1.99704,
+      "leveraging your": 1.96948,
+      "cf": 1.86751
+    },
+    "real": {
+      "client": -1.62305,
+      "will": -1.58342,
+      "on": -1.4276,
+      "must": -1.38741,
+      "growing": -1.37485,
+      "will be": -1.36405,
+      "an": -1.33008,
+      "our": -1.30645,
+      "companies": -1.28665,
+      "it": -1.26849
+    },
+    "fraud_structured": {
+      "cat__industry_Oil & Energy": 2.13549,
+      "cat__country_AU": 1.5688,
+      "cat__country_Missing": 1.56647,
+      "cat__industry_Accounting": 1.56371,
+      "cat__country_US": 1.44806,
+      "cat__function_Administrative": 1.30802,
+      "cat__industry_Design": 1.10421,
+      "cat__industry_Hospital & Health Care": 0.99204
+    },
+    "real_structured": {
+      "cat__function_Health Care Provider": -2.73786,
+      "cat__industry_Internet": -2.37072,
+      "cat__country_GR": -2.1566,
+      "cat__industry_Computer Software": -1.62721,
+      "cat__industry_Education Management": -1.58918,
+      "cat__employment_type_Temporary": -1.41621,
+      "cat__function_Quality Assurance": -1.34923,
+      "bin__has_company_logo": -1.13187
+    }
+  },
+  "fraud_rate_by_missing_profile": {
+    "missing": 0.17744860943168078,
+    "present": 0.01914630798792204
+  },
+  "false_positives": 12,
+  "false_negatives": 29
+}

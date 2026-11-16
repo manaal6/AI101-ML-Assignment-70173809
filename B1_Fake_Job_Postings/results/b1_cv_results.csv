@@ -1,0 +1,4 @@
+Model,Configurations,Selection scheme,Best params,PR-AUC mean,PR-AUC std,Search seconds
+Logistic Regression,2,3-fold CV,C=1.0,0.8251,0.0301,55.8
+Linear SVM,2,3-fold CV,C=0.1,0.8492,0.0328,31.4
+LightGBM,1,fixed (validation),fixed,0.9542,,67.1

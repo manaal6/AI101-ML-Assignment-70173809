@@ -1,0 +1,4 @@
+Features,Threshold,Val PR-AUC,Test PR-AUC,Test ROC-AUC,Test precision,Test recall,Test F1
+structured-only,0.8575,0.8424,0.7947,0.9698,0.7941,0.6231,0.6983
+text-only,0.455,0.9363,0.8898,0.9839,0.8879,0.7923,0.8374
+combined,0.5286,0.9542,0.9191,0.9921,0.8938,0.7769,0.8313
